@@ -1,6 +1,6 @@
 # 审核员资格与能力矩阵管理（auditor-qualification）
 
-> 面向体系经理与审核方案管理者的混合式双版技能。结构化管理审核员资格/能力矩阵与维护计划，区分于考试评审，输出资格矩阵与维护计划（Markdown + HTML 双版）。
+> 面向体系经理与审核方案管理者的结构化矩阵管理技能。结构化管理审核员资格/能力矩阵与维护计划，区分于考试评审，输出资格矩阵与维护计划（纯文字版 .txt + Markdown .md）。
 
 ## 适用角色
 
@@ -13,7 +13,7 @@
 2. 集中归集能力证据：证书、培训、审核经历（次数/人日）、适用范围、有效期。
 3. 自动计算资格状态（有效 / 即将到期 / 待复审 / 失效）与到期预警。
 4. 编制年度维护计划（再培训、复审、最低人日补足）。
-5. 一键产出双版本：`审核员资格矩阵.md` 与 `审核员资格矩阵.html`（主色 #C8102E）。
+5. 一键产出双文件：`审核员资格矩阵.md` 与 `审核员资格矩阵.txt`（纯文字版）。
 
 ## 目录结构
 
@@ -23,15 +23,15 @@ auditor-qualification/
 ├── README.md
 ├── references/
 └── scripts/
-    └── build_report.py     # 双版报告生成器（含内置小样本）
+    └── build_report.py     # txt+md 报告生成器（含内置小样本）
 ```
 
 ## 快速使用
 
 ```bash
 python scripts/build_report.py --demo
-python scripts/build_report.py --input result.json \
-    --md-out 审核员资格矩阵.md --html-out 审核员资格矩阵.html
+python scripts/build_report.py --input result.json --out-dir ./out
+# 默认输出：审核员资格矩阵_*.md + 审核员资格矩阵_*.txt（日期命名）
 ```
 
 ## 与考试评审的区别
